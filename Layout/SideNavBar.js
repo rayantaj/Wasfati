@@ -1,8 +1,9 @@
 import React from 'react'
 import { slide as Menu } from 'react-burger-menu'
-import { sideNavStyles } from "../Components/Variables/variables"
+import { sideNavStyles } from "../Variables/variables"
 import { Heading, Box, Center, Text, Link, Divider, Flex, Spacer, Icon } from "@chakra-ui/react"
-import { BsEggFried } from "react-icons/bs";
+import ActiveLink from "../Components/ActiveLink";
+import { breakfastIcon, lunchIcon, dinnerIcon, brunchIcon, hotDesertsIcon, coldDesertsIcon, coffeIcon, juiceIcon, partyIcon, homeIcon, aboutUsIcon, allRecipesIcon } from "../Variables/variables";
 
 
 
@@ -15,93 +16,98 @@ const SideNavBar = () => {
 
 
     return (
-        <Box >
+        <Box  >
             <Menu styles={sideNavStyles}>
                 <Box width="100%" h="100%" p="1rem">
                     <Center>
-                        <Box p="2rem"><Heading color="whiteAlpha.900">Wasfati</Heading></Box>
+                        {/* <Box p="2rem"><Heading color="whiteAlpha.900">Wasfati</Heading></Box> */}
                     </Center>
-
-
-
-                    <Box>
-
-                        <Text color="whiteAlpha.900" fontSize="1.5rem" fontWeight="semibold">Main Courses</Text>
-
-                        <Box width="100%" h="100%" py="0.2rem" >
-                            <Link><Flex>
-                                <Text color="whiteAlpha.800">Breakfast</Text>
-                                <Spacer />
-                                <Icon as={BsEggFried} color="whiteAlpha.800"></Icon>
-
-                            </Flex></Link>
+                    <Box pt="2rem" >
+                        <Box>
+                            <Text fontWeight="semibold" color="#d2d2cf" p="0.5rem">Discover</Text>
                         </Box>
-                        <Box width="100%" h="100%" py="0.2rem" >
-                            <Link><Flex>
-                                <Text color="whiteAlpha.800">Lunch</Text>
-                                <Spacer />
-                                <Icon as={BsEggFried} color="whiteAlpha.800"></Icon>
 
-                            </Flex></Link>
-                        </Box>
-                        <Box width="100%" h="100%" py="0.2rem" >
-                            <Link><Flex>
-                                <Text color="whiteAlpha.800">Dinner</Text>
-                                <Spacer />
-                                <Icon as={BsEggFried} color="whiteAlpha.800"></Icon>
+                        <ActiveLink href="/" type="primary" icon={homeIcon}>
+                            <a>Home</a>
 
-                            </Flex></Link>
-                        </Box>
-                        <Box width="100%" h="100%" py="0.2rem" >
-                            <Link><Flex>
-                                <Text color="whiteAlpha.800">Brunch</Text>
-                                <Spacer />
-                                <Icon as={BsEggFried} color="whiteAlpha.800"></Icon>
+                        </ActiveLink>
+                        <ActiveLink href="/allRecipes" type="primary" icon={allRecipesIcon}>
+                            <a>All recipes</a>
 
-                            </Flex></Link>
+                        </ActiveLink>
+                        <ActiveLink href="/aboutus" type="primary" icon={aboutUsIcon}>
+                            <a>About us </a>
+
+                        </ActiveLink>
+
+                    </Box>
+
+                    <Box pt="2rem">
+                        <Box>
+                            <Text fontWeight="semibold" color="#d2d2cf" p="0.5rem">Main Courses</Text>
                         </Box>
+
+                        <ActiveLink href="/breakfast" type="primary" icon={breakfastIcon}>
+                            <a>Breakfast</a>
+
+                        </ActiveLink>
+
+                        <ActiveLink href="/lunch" type="primary" icon={lunchIcon}>
+                            <a>Lunch</a>
+
+                        </ActiveLink>
+                        <ActiveLink href="/dinner" type="primary" icon={dinnerIcon}>
+                            <a>Dinner</a>
+
+                        </ActiveLink>
+                        <ActiveLink href="/brunch" type="primary" icon={brunchIcon}>
+                            <a>Brunch</a>
+
+                        </ActiveLink>
+
+
+
+                    </Box>
+                    <Box pt="2rem">
+                        <Box>
+                            <Text fontWeight="semibold" color="#d2d2cf" p="0.5rem">Deserts</Text>
+                        </Box>
+
+                        <ActiveLink href="/brunch" type="primary" icon={hotDesertsIcon}>
+                            <a>Hot Deserts</a>
+
+                        </ActiveLink>
+                        <ActiveLink href="/brunch" type="primary" icon={coldDesertsIcon}>
+                            <a>Cold deserts</a>
+
+                        </ActiveLink>
+
+
+
+                    </Box>
+                    <Box pt="2rem">
+                        <Box>
+                            <Text fontWeight="semibold" color="#d2d2cf" p="0.5rem">Drinks</Text>
+                        </Box>
+
+                        <ActiveLink href="/brunch" type="primary" icon={coffeIcon}>
+                            <a>Coffee</a>
+
+                        </ActiveLink>
+                        <ActiveLink href="/brunch" type="primary" icon={juiceIcon}>
+                            <a>Juice</a>
+
+                        </ActiveLink>
+                        <ActiveLink href="/brunch" type="primary" icon={partyIcon}>
+                            <a>Party Drinks</a>
+
+                        </ActiveLink>
 
 
 
                     </Box>
 
-                    <Box>
-                        <Text color="whiteAlpha.900" fontSize="1.5rem" fontWeight="semibold">Snacks & Drinks</Text>
 
-                        <Box width="100%" h="100%" py="0.2rem" >
-                            <Link><Flex>
-                                <Text color="whiteAlpha.800">Snacks</Text>
-                                <Spacer />
-                                <Icon as={BsEggFried} color="whiteAlpha.800"></Icon>
-
-                            </Flex></Link>
-                        </Box>
-                        <Box width="100%" h="100%" py="0.2rem" >
-                            <Link><Flex>
-                                <Text color="whiteAlpha.800">Drinks</Text>
-                                <Spacer />
-                                <Icon as={BsEggFried} color="whiteAlpha.800"></Icon>
-
-                            </Flex></Link>
-                        </Box>
-                        <Box width="100%" h="100%" py="0.2rem" >
-                            <Link><Flex>
-                                <Text color="whiteAlpha.800">Dinner</Text>
-                                <Spacer />
-                                <Icon as={BsEggFried} color="whiteAlpha.800"></Icon>
-
-                            </Flex></Link>
-                        </Box>
-                        <Box width="100%" h="100%" py="0.2rem" >
-                            <Link><Flex>
-                                <Text color="whiteAlpha.800">Brunch</Text>
-                                <Spacer />
-                                <Icon as={BsEggFried} color="whiteAlpha.800"></Icon>
-
-                            </Flex></Link>
-                        </Box>
-
-                    </Box>
 
 
                 </Box>

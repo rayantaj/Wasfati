@@ -16,7 +16,7 @@ const PrimaryLink = ({ href, children, icon }) => {
     let fontWeight = "normal";
     if (asPath === href) {
         color = "white";
-        bg = "black";
+        bg = "#ea5f20";
         hover = false;
         fontWeight = "bold";
     }

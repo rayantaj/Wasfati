@@ -2,8 +2,8 @@ import React from 'react'
 import { useLayoutEffect, useState } from "react";
 import SideNavMobile from "../Layout/SideNavBar";
 import DisktopNav from "../Layout/DisktopNav";
-import { Box, Flex, Text } from "@chakra-ui/react";
-
+import { Box, Flex, Spacer, Text, Avatar, Center, Heading } from "@chakra-ui/react";
+import ActiveLink from "../Components/ActiveLink";
 
 const NavSystemLayout = (props) => {
 
@@ -26,14 +26,27 @@ const NavSystemLayout = (props) => {
     const [width] = useMediaQuery();
 
     return width < 800 ?
-        <Box>
-            <Flex boxShadow="md" height="4rem">
+        <Box >
+            <Flex boxShadow="md" height="4rem"  >
 
-                <Box width="15%">
+                <Box >
                     <SideNavMobile />
                 </Box>
-                <Box>
-                    <Text>Main</Text>
+                <Spacer />
+
+                <Center>
+
+                    <Text fontWeight="semibold" >Wasfati</Text>
+
+                </Center>
+
+                <Spacer />
+                <Box p="1rem">
+                    <Box>
+                        <Text color="#6e6d7a">
+                            SignIn
+                        </Text>
+                    </Box>
                 </Box>
             </Flex>
 
@@ -43,13 +56,37 @@ const NavSystemLayout = (props) => {
             </Box>
         </Box>
         : <Box>
+            <Box borderBottomWidth="thin" >
+                <Flex mx="5rem" p="1rem">
+                    <Spacer />
+                    <Box>
 
-            <Flex height="4rem">
-                <Box width="15%" >
+                        <Heading color="black">Wasfati</Heading>
+                    </Box>
+                    <Spacer />
+                    <a href="/logIn">
+                        <Box borderRadius="md" boxShadow="md" py="0.5rem" px="1rem" borderColor="#ea5f20" borderWidth="thin">
+                            <Text>
+                                LogIn
+                        </Text>
+                        </Box>
+                    </a>
+
+                </Flex>
+            </Box>
+
+
+
+
+            <Flex >
+                {/* position="fixed" */}
+                <Box width="15%">
                     <DisktopNav />
                 </Box>
+
+
                 <Box width="90%" >
-                    <Box boxShadow="md"> <Text>Main</Text></Box>
+
                     <Box p="1rem" w="100%" h="100%">
                         {props.body}
                     </Box>
